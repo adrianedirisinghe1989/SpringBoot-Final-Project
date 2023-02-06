@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    password: pizza
+    username: pizza
+    url:  jdbc:mysql://localhost:3306/pizza
+
+logging:
+  level:
+    root: warn
+    '[com.promineotech]': debug
