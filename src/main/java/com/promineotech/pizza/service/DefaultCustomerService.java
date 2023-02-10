@@ -16,7 +16,7 @@ public class DefaultCustomerService implements CustomerService {
   @Autowired
   private CustomerDao customerDao;
 
-// Get (read customers)
+
   @Transactional(readOnly = true)
   @Override
   public  List<Customers> fetchCustomers(Long customerPK, String customerId){
@@ -26,7 +26,7 @@ public class DefaultCustomerService implements CustomerService {
     return customerDao.fetchCustomers(customerPK, customerId);
   }
   
-// Post (create customers)
+
  @Override
  public Optional<Customers> createCustomers(String customerId, String firstName, 
      String lastName, String phone){
@@ -38,7 +38,7 @@ public class DefaultCustomerService implements CustomerService {
   
  }
 
-// Put (update customers)
+
  @Override
  public Optional<Customers> updateCustomers(String customerId, String firstName, String lastName, 
      String phone, String newFirstName, String newLastName, String newPhone){

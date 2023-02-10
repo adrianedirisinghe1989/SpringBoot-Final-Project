@@ -94,7 +94,7 @@ public class DefaultCustomerDao implements CustomerDao {
         + "UPDATE customers SET phone = :new_phone, "
         + "first_name = :new_first_name, "
         + "last_name = :new_last_name "
-        + "WHERE customerId = :customer_id AND "
+        + "WHERE customer_id = :customer_id AND "
         + "first_name = :first_name AND "
         + "last_name = :last_name";
     
@@ -108,6 +108,7 @@ public class DefaultCustomerDao implements CustomerDao {
     params.put("new_first_name", newFirstName); 
     params.put("new_last_name", newLastName);
     params.put("new_phone", newPhone); 
+
     
     jdbcTemplate.update(sql, params);
     return Optional.ofNullable(Customers.builder()

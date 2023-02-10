@@ -1,13 +1,10 @@
 package com.promineotech.pizza.controller;
-
-
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import com.promineotech.pizza.entity.Address;
 import com.promineotech.pizza.service.AddressService;
-
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -47,4 +44,18 @@ public class DefaultAddressController implements AddressController {
    
    return addressService.updateAddress(addressPK, customerId, billingAddress, shippingAddress); 
   }
+
+public Optional<Address> deleteAdress(Long addressPK, String customerId, 
+	     String billingAddress, String shippingAddress){
+	   
+	   log.info("The updateAddress method was called with addressPK={}, customerId={}, billingAddress={},"
+	       + "shippingAddress", addressPK, customerId, billingAddress, shippingAddress);
+	   
+	   return addressService.deleteAdress(addressPK, customerId, billingAddress, shippingAddress); 
+
 }
+}
+
+
+
+

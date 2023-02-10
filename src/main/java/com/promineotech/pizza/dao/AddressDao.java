@@ -15,4 +15,6 @@ public interface AddressDao {
 
 	Optional<Address> updateAddress(Long addressPK, String customerId, String deliveryAddress);
 
+	Optional<Address> deleteAddress(Long addressPK, String customerId, String billingAddress, String shippingAddress);
+
 }

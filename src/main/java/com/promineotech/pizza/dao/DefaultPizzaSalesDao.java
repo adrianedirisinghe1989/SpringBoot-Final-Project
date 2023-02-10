@@ -92,7 +92,7 @@ public class DefaultPizzaSalesDao implements PizzaSalesDao {
 	      + "UPDATE Pizzas SET pizza_size = :new_pizza_size "
 	      + "WHERE pizza_Id = :pizza_Id AND pizza_size = :pizza_size";
 	  
-	  // can add Pizza_type to update if switch savory vs sweet...need to recode params/sql
+	  // can add Pizza_type to update if switch cheese vs alferdo...need to recode params/sql
 	  
 	  //@formatter:on
 	  

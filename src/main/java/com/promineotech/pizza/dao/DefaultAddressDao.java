@@ -106,6 +106,32 @@ public Optional<Address> updateAddress(Long addressPK, String customerId, String
 		String shippingAddress) {
 	return Optional.empty();
 }
+
+
+public Optional<Address> deleteAddress(String customerId, String billingAddress,
+    String deliveryAddress) {
+  log.info("DAO: customerId={}, billingAddress={}, deliveryAddress={}",
+      customerId, billingAddress, deliveryAddress);
+
+ //@formatter:off
+ String sql = ""
+   + "DELETE INTO address ("
+   + "customer_id, billing_address, shipping_address"
+   + ") VALUES ("
+   +  ":customer_id, :billing_address, :shipping_address)";
+ //@formatter:on
+
+Map<String, Object> params = new HashMap<>();
+params.put("customer_id", customerId);
+params.put("shipping_address", deliveryAddress); 
+
+jdbcTemplate.update(sql, params);
+return Optional.ofNullable(Address.builder()
+   .deliveryAddress(deliveryAddress).build());
 }
 
-	
+public Optional<Address> deleteAddress(Long addressPK, String customerId, String billingAddress,
+		String shippingAddress) {
+	return Optional.empty();
+}	
+}

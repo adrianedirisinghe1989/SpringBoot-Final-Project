@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import com.promineotech.pizza.entity.Address;
+import com.promineotech.pizza.entity.Pizza;
+import com.promineotech.pizza.entity.PizzaSize;
+import com.promineotech.pizza.entity.PizzaType;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -105,17 +108,18 @@ public interface AddressController {
               name = "customerId", 
               allowEmptyValue = false, 
               required = false, 
-              description = "The customer id (i.e., 'pielover75')"), 
+              description = "The customer id (i.e., 'ssmith62')"), 
           @Parameter(
               name = "billingAddress",
               allowEmptyValue = false,
               required = false,
-              description = "The billing address (i.e., '123 Crust Lane')"),
+              description = "The deliveryaddress (i.e., '1')"),
           @Parameter(
-              name = "shippingAddress",
-              allowEmptyValue = false,
-              required = false,
-              description = "The shipping address (i.e., '456 A La Mode Loop')"),
+                  name = "shippingAddress",
+                  allowEmptyValue = false,
+                  required = false,
+                  description = "The deliveryaddress (i.e., '61 Hoffman Crossing')"),
+    
       }
   )
   
@@ -123,8 +127,8 @@ public interface AddressController {
   @ResponseStatus(code = HttpStatus.CREATED)
   Optional<Address> createAddress(
       String customerId, 
-      String billingAddress, 
-      String shippingAddress);
+     String billingAddress,
+      String deliveryadress);
 
   
   
@@ -160,12 +164,12 @@ public interface AddressController {
               name = "customerId", 
               allowEmptyValue = false, 
               required = false, 
-              description = "The customer id (i.e., 'pielover75')"), 
+              description = "The customer id (i.e., 'Southbay310')"), 
           @Parameter(
               name = "billingAddress",
               allowEmptyValue = false,
               required = false,
-              description = "The billing address (i.e., '123 Crust Lane')"),
+              description = "The billing address (i.e., '3444 Emerald st.')"),
           @Parameter(
               name = "shippingAddress",
               allowEmptyValue = false,
@@ -180,5 +184,6 @@ public interface AddressController {
       String customerId, 
       String billingAddress,
       String shippingAddress);
+
 }
 

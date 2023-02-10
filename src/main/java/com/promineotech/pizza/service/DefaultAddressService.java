@@ -50,6 +50,25 @@ import lombok.extern.slf4j.Slf4j;
 	   return addressDao.updateAddress(addressPK, customerId, billingAddress, shippingAddress); 
 	 
 	  }
+
+	@Override
+	public Optional<Address> deleteAdress(Long addressPK, String customerId, String billingAddress,
+			String shippingAddress) {
+	
+		return Optional.empty();
 	}
+
+	@Override
+	public Optional<Address> createAddress(String customerId, String billingAddress, int customerFk) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+
+	}
+
+
+	
+	
 
 

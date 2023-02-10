@@ -23,18 +23,18 @@ import io.swagger.v3.oas.annotations.servers.Server;
 
 @Validated
 @RequestMapping("/Customers")
-@OpenAPIDefinition(info = @Info(title = "WooPies Customer Service"), servers = {
+@OpenAPIDefinition(info = @Info(title = "PizzaSales Customer Service"), servers = {
     @Server(url = "http://localhost:8080", description = "Local server.")})
 
 public interface CustomerController {
 //@formatter:off
   @Operation(
-      summary = "Returns a list of customers",
-      description = "Returns a list of customers given a required customer id and optional customerPK",
+      summary = "Returns a customer",
+      description = "Returns a specific customer",
       responses = {
           @ApiResponse(
               responseCode = "200", 
-              description = "A list of customers is returned.", 
+              description = "A  customer is returned.", 
               content = @Content(
                   mediaType = "application/json", 
               schema = @Schema(implementation = Customers.class))),
@@ -59,12 +59,12 @@ public interface CustomerController {
               name = "customerPK", 
               allowEmptyValue = false, 
               required = false, 
-              description = "The customerPK (i.e., '24')"), 
+              description = "The customerPK (i.e., '30')"), 
           @Parameter(
               name = "customerId",
               allowEmptyValue = false,
               required = false,
-              description = "The customerId (i.e., 'pielover75')") 
+              description = "The customerId (i.e., 'Southbay310')") 
      }
   )
   
@@ -109,22 +109,22 @@ public interface CustomerController {
               name = "customerId", 
               allowEmptyValue = false, 
               required = false, 
-              description = "The customer id (i.e., 'pielover75')"), 
+              description = "The customer id (i.e., 'Josh')"), 
           @Parameter(
               name = "firstName",
               allowEmptyValue = false,
               required = false,
-              description = "The first name (i.e., 'Jane')"),
+              description = "The first name (i.e., 'Emiy')"),
           @Parameter(
               name = "lastName",
               allowEmptyValue = false,
               required = false,
-              description = "The last name (i.e., 'Dough')"),
+              description = "The last name (i.e., 'Smith')"),
           @Parameter(
               name = "phone",
               allowEmptyValue = false,
               required = false,
-              description = "The phone number (i.e., '846-336-7743')")
+              description = "The phone number (i.e., '310-523-4568')")
       }
   )
  
@@ -178,17 +178,17 @@ public interface CustomerController {
               name = "firstName",
               allowEmptyValue = false,
               required = false,
-              description = "The first name (i.e., 'Jane')"),
+              description = "The first name (i.e., 'Sammatha')"),
           @Parameter(
               name = "lastName",
               allowEmptyValue = false,
               required = false,
-              description = "The last name (i.e., 'Dough')"),
+              description = "The last name (i.e., 'Baker')"),
           @Parameter(
               name = "phone",
               allowEmptyValue = false,
               required = false,
-              description = "The phone number (i.e., '846-336-7743')")
+              description = "The phone number (i.e., '424-563-8952')")
       }
   )
   
